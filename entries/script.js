@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let limitInputLength = document.getElementById('inputContent');
     limitInputLength.addEventListener('blur', function() {
         if (limitInputLength.value.length > 12) {
-            alert("error")
+            alert("sry maximum 12 letters(˚ ˃̣̣̥⌓˂̣̣̥)")
         }
     });
 
@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function(){
     btnGo.addEventListener('click', function() {
         let inputLength = document.getElementById('inputContent').value.length
         if ( inputLength === 0 ) {
-            alert("请输入")
+            alert("If you can't figure out what to enter just type in some random numbers ᡣ𐭩ྀིྀི")
         } else if ( inputLength > 12 ) {
-            alert("最大字符12")
+            alert("sry maximum 12 letters(˚ ˃̣̣̥⌓˂̣̣̥)")
         } else {
             localStorage.setItem('userName', document.getElementById('inputContent').value)
             window.location.href="./entry1/index.html"

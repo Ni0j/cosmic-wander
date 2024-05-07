@@ -253,3 +253,46 @@ cursor: pointer;
   line-height: normal;
   mix-blend-mode: exclusion;
 }
+
+
+@media screen and (max-width: 768px) {
+  html{
+    margin: 0;
+    font-size:12px;
+    font-family: "haboro-serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    overflow: hidden;
+  }
+
+  .menu{
+    display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  position:fixed;
+  z-index: 10000;
+  top:1rem;
+  left: 1rem;
+  width: 10vw;
+  transition: opacity 1s ease;
+  }
+
+  .window{
+    position: fixed;
+    height: 36vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border: 2px solid #DAA9B2;
+    background: #EFF0F1;
+    box-shadow: 2px 2px 26px 0px #DAA9B2;
+    z-index: 2000;
+  }
+
+
+}
