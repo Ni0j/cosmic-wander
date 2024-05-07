@@ -210,8 +210,10 @@ input:focus {
   opacity: 0;
   filter: blur(2px);
   transition: opacity 1.5s ease, filter 1.5s ease;
-  transition-delay: 1s;
+  transition-delay: 0.5s;
   cursor: help;
+  padding: 1rem;
+  mix-blend-mode: exclusion;
 }
 
 .float-text:hover {
@@ -220,13 +222,18 @@ input:focus {
 }
 
 .one{
-  top: 25vw;
-  left: 2rem;
+  top: 25%;
+  left: 10%;
 }
 
 .two{
-  top: 50vw;
-  left: 2rem;
+  top: 50%;
+  left: 2%;
+}
+
+.three{
+  top:28%;
+  left:66%;
 }
 
 @media screen and (max-width: 768px) {

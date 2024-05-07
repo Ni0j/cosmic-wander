@@ -54,9 +54,10 @@ body{
   opacity: 0;
   filter: blur(2px);
   transition: opacity 1.5s ease, filter 1.5s ease;
-  transition-delay: 1s; 
+  transition-delay: 0.5s; 
   cursor: help;
   z-index: 5000;
+  mix-blend-mode: exclusion;
 }
 
 .float-text:hover {
@@ -65,8 +66,8 @@ body{
 }
 
 .seven{
-  top: 25vw;
-  left: 2rem;
+  top: 50%;
+  left: 2%;
 }
 
 
