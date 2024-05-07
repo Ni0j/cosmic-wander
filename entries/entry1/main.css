@@ -97,11 +97,13 @@ gap: 0.5rem;
 background: #DAA9B2;
 }
 .dot{
-  width: 0.6875rem;
-height: 0.6875rem;
+  /* width: 0.2rem; */
+height: 0.25rem;
 flex-shrink: 0;
 border-radius: 999rem;
 fill: #25646C;
+display: flex;
+align-items: center;
 }
 
 .info-title{
@@ -109,18 +111,28 @@ fill: #25646C;
 padding: 0rem 0.1rem;
 align-items: center;
 gap: 0.625rem;
-border-radius: 6.1875rem;
-border: 1px solid #25646C;
+/* border-radius: 6.1875rem;
+border: 1px solid #25646C; */
 }
 
 .info{
   color: #25646C;
   font-family: "haboro-serif", serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 0.8rem 0;
+  margin: 0rem 0;
+}
+
+p {    
+  margin: 0rem;
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;margin:0rem;
 }
 
 .content{
