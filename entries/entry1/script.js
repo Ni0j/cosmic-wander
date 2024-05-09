@@ -6,6 +6,9 @@ let usedFilters = [];
 //1. canvas（也就是小行星图片）的width等比object的diameter 用km（api中的数值）
 //2.canvas一开始先是和背景相同的颜色或者opacity0（目的是一开始看不见），然后hover后才会出现，双击就是捕获（记下这个小行星的数据包括应用的filter，api，图片，存入仓库（entry3）中 local storage），双击后先弹一个弹窗 - 对应html里提到的
 
+//0509更新：
+//
+
 
 document.addEventListener("DOMContentLoaded", function(){
   // 菜单
