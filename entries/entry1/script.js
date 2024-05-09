@@ -118,7 +118,9 @@ document.addEventListener("DOMContentLoaded", function(){
             canvas.style.opacity = 1;
     
           }
+          let audioElement = new Audio('./assets/doubleclicked-sfx.ogg');
           canvas.addEventListener('dblclick', function (event) {
+            audioElement.play();
             // 展示弹框
             let showDetail = document.getElementById("windowShow")
             showDetail.style.display = 'block'
@@ -343,5 +345,21 @@ function clickEgg(name) {
   }
   if (eggListOld.length === 7) {
     document.getElementById('showEgg').style.display = 'block'
+  }
+}
+
+
+function music(type) {
+  let music = document.getElementById("bgMusic");
+  let musicPlay = document.getElementById("musicPlay");
+  let musicPause = document.getElementById("musicPause");
+  if (type === 'play') {
+      music.play()
+      musicPlay.style.display = 'none'
+      musicPause.style.display = 'block'
+  } else {
+      music.pause()
+      musicPlay.style.display = 'block'
+      musicPause.style.display = 'none'
   }
 }

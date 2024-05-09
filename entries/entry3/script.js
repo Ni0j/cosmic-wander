@@ -136,3 +136,18 @@ function clickEgg(name) {
       document.getElementById('showEgg').style.display = 'block'
    }
 }
+
+function music(type) {
+   let music = document.getElementById("bgMusic");
+   let musicPlay = document.getElementById("musicPlay");
+   let musicPause = document.getElementById("musicPause");
+   if (type === 'play') {
+       music.play()
+       musicPlay.style.display = 'none'
+       musicPause.style.display = 'block'
+   } else {
+       music.pause()
+       musicPlay.style.display = 'block'
+       musicPause.style.display = 'none'
+   }
+ }

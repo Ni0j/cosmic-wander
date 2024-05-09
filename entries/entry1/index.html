@@ -56,25 +56,33 @@
     <div class="float-text six" onClick="clickEgg('six')">It's quite similar. As we delved deeper into the microcosm, we reached the end of the microcosm, and thus returned to the entire macrocosm.</div>
 
  <!-- 菜单，初始显示，隔30后没有触碰就渐隐消失，然后再次hover后再出现，然后重复-->
-    <div class="menu" id="menuShow">
-      <div class="back">
-        <a href="../index.html"><img src="./assets/back-icon.png" class="icon"></a>
-      </div>
-      <div class="map">
-        <a href="../entry1/index.html"><img src="./assets/map-icon.png" class="icon"></a>
-      </div>
-      
-      <div class="index">
-        <a href="../entry3/index.html"><img src="./assets/collect-icon.png" class="icon"></a>
-      </div>
-      <!-- 下面这个div改为音乐的图标，初始显示没有音乐，点击后切换图标到（music-icon.png）并播放bgm一直单曲循环，对应音乐文件：map-bgm.wav(没有放到html里)再次点击暂停当前音乐，并记录暂停位置，图标切换为没有音乐，再次点击继续从上次暂停的地方播放，图标也切换-->
-      <div class="collect">
-        <a href="../entry2/index.html"><img src="./assets/music-no-icon.png" class="icon"></a>
-      </div>
-      <div class="index" id="showEgg" style="display: none;">
-        <a href="javascript" onclick="return false"><img src="./assets/egg-icon.png" class="icon"></a>
-      </div>
+ <div class="menu" id="menuShow">
+  <div class="back">
+    <a href="../index.html"><img src="./assets/back-icon.png" class="icon"></a>
+  </div>
+  <div class="map">
+    <a href="../entry1/index.html"><img src="./assets/map-icon.png" class="icon"></a>
+  </div>
+  
+  <div class="index">
+    <a href="../entry3/index.html"><img src="./assets/collect-icon.png" class="icon"></a>
+  </div>
+  <!-- 下面这个div改为音乐的图标，初始显示没有音乐，点击后切换图标到（music-icon.png）并播放bgm一直单曲循环，对应音乐文件：map-bgm.wav(没有放到html里)再次点击暂停当前音乐，并记录暂停位置，图标切换为没有音乐，再次点击继续从上次暂停的地方播放，图标也切换-->
+  <div>
+    <div id="musicPlay" onclick="music('play')"><img src="./assets/music-no-icon.png" class="icon"></div>
+    <div id="musicPause" style="display: none;" onclick="music('pause')"><img src="./assets/music-icon.png" class="icon">
     </div>
+    <audio loop id="bgMusic">
+      <source src="./assets/map-bgm.wav" type="audio/mpeg">
+    </audio>
+  </div>
+  <!-- <div class="collect">
+    <a href="../entry2/index.html"><img src="./assets/music-no-icon.png" class="icon"></a>
+  </div> -->
+  <div class="index" id="showEgg" style="display: none;">
+    <a href="javascript" onclick="return false"><img src="./assets/egg-icon.png" class="icon"></a>
+  </div>
+</div>
 
 
         <div class="name-box">
@@ -83,8 +91,8 @@
 
 
         <!-- 书的图标css和菜单的其他图标一样！消失的机制也一样。区别是额外加了旋转30度，但是位置在页面左下角-->
-        <div class="book">
-          <a href="../entry2/index.html"><img src="./assets/book-icon.png" class="icon" style="rotate: 30deg;"></a>
+        <div class="book-icon" id="bookShow">
+          <div onClick="showBigBook()"><img src="./assets/book-icon.png" class="icon"></div>
         </div>
 
           <!-- 0509更新：双击捕获星星带音效：entries/entry1/assets/doubleclicked-sfx.ogg-->

@@ -55,8 +55,14 @@
 
 <!-- 下面这个div改为音乐的图标，初始显示没有音乐，点击后切换图标到（music-icon.png）并播放bgm一直单曲循环，对应音乐文件：map-bgm.wav(没有放到html里)再次点击暂停当前音乐，并记录暂停位置，图标切换为没有音乐，再次点击继续从上次暂停的地方播放，图标也切换-->
 <!-- 和entry1 3的菜单样式一样，只不过只有music的图标，在左上角-->
-<div class="index">
-  <a href="../entry3/index.html"><img src="./assets/music-no-icon.png" class="icon"></a>
+<div class="menu" id="menuShow">
+  <div>
+    <div id="musicPlay" onclick="music('play')"><img src="./assets/music-no-icon.png" class="icon"></div>
+    <div id="musicPause" style="display: none;" onclick="music('pause')"><img src="./assets/music-icon.png" class="icon"></div>
+    <audio loop id="bgMusic">
+      <source src="./assets/homepage-bgm.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
     </main>
