@@ -63,24 +63,35 @@ document.addEventListener("DOMContentLoaded", function(){
 
          // canvas.style.transition = 'top ' + time + 's'
          // canvas.style.transition = 'left ' + time + 's'
-         canvas.style.transition = 'transform ' + time + 's'
          
+         canvas.style.opacity = 0// 第一次滑行到随机位置时，隐藏起来
+         canvas.style.transition = 'transform ' + 0.1 + 's'// 第一次让它快点滑倒随机位置
          // 初始化位置
          function randomPosition() {
             var maxLeft = canvas.parentNode.offsetWidth - canvas.offsetWidth;
             var maxTop = canvas.parentNode.offsetHeight - canvas.offsetHeight;
             var left = Math.random() * maxLeft;
             var top = Math.random() * maxTop;
-            canvas.style.left = left + 'px';
-            canvas.style.top = top + 'px';
             canvas.style.transform = 'translate(' + left + 'px, ' + top + 'px)';
          }
-         randomPosition(); // 初始化位置固定位置
-         randomPosition(); // 再次调用，星星开始滑动
-         // 定时器进行随机滑动
-         setInterval(function () {
-            randomPosition();
-         }, time * 500); // 每2秒更新一次位置
+
+         
+         randomPosition(); // 初始化位置固定位置左上角
+         randomPosition(); // 定位到随机位置
+
+
+         // 开始显示并且随机滑动星星
+         setTimeout(() => {
+            canvas.style.transition = 'transform ' + time + 's'// 使用api种的速度滑行
+            randomPosition(); // 再次调用，星星开始滑动
+            canvas.style.opacity = 1
+
+            // 定时器进行随机滑动
+            setInterval(function () {
+               randomPosition();
+            }, time * 500); // 每几秒更新一次位置
+         }, 500);
+
       };
 
       image.src = item.imageUrl;
