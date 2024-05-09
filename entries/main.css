@@ -214,6 +214,7 @@ input:focus {
   cursor: help;
   padding: 1rem;
   mix-blend-mode: exclusion;
+  z-index: -1;
 }
 
 .float-text:hover {

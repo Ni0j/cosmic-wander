@@ -187,6 +187,7 @@ flex-shrink: 0;
   cursor: help;
   z-index: 5000;
   mix-blend-mode: exclusion;
+  z-index: -1;
 }
 
 .float-text:hover {
