@@ -240,7 +240,7 @@ function roundToTwo(num) {
 
 
 
-//比起鼠标拖动来移动，能否改成wasd来移动
+
 
 container.style.zIndex = '1';
 
@@ -270,22 +270,22 @@ container.addEventListener('mouseup', () => {
 
 let lengthX, lengthY, oldX, oldY;
 document.addEventListener('keydown', (e) => {
-  let length = 30
+  let length = 50
   lengthX = 0;
   lengthY = 0;
   oldX = container.offsetLeft;
   oldY = container.offsetTop;
   switch (e.key) {
-    case "w":
+    case "s":
       lengthY -= length;
       break;
-    case "a":
+    case "d":
       lengthX -= length;
       break;
-    case "d":
+    case "a":
       lengthX += length;
       break;
-    case "s":
+    case "w":
       lengthY += length;
       break;
   }
@@ -297,6 +297,26 @@ document.addEventListener("keyup", () => {     //按键松开，小方块滑动
 })
 
 
+
+container.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+  translateX = container.offsetLeft;
+  translateY = container.offsetTop;
+});
+
+container.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+  const x = e.touches[0].clientX - startX;
+  const y = e.touches[0].clientY - startY;
+  container.style.left = `${translateX + x}px`;
+  container.style.top = `${translateY + y}px`;
+});
+
+container.addEventListener('touchend', () => {
+  isDragging = false;
+});
 
 
 
